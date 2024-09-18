@@ -39,21 +39,16 @@ def SaveFile(fileName):
 def clear():
     glist_events = []
 
-def SetOldStyleFasting(bOldStyle):
-    locMatrix = []
+def SetOldStyleFasting(style):
     file_name = os.path.join(os.path.dirname(__file__), 'res', 'eventfast.json')
     with open(file_name,'rt',encoding='utf-8') as rf:
-        locMatrix = json.load(rf)
-    ret = 0
-    key = 'fast' if bOldStyle else 'newfast'
-    for a in locMatrix:
+        fast_matrix = json.load(rf)
+    key = 'fast' if style else 'newfast'
+    for a in fast_matrix:
         for pce in glist_events:
             if pce.nMasa == a['masa'] and pce.nTithi == a['tithi'] and pce.nClass == a['cls']:
-                if pce.nFastType != a[key]:
-                    ret += 1
-                    pce.nFastType = a[key]
+                pce.nFastType = a[key]
                 break
-    return ret
 
 def Count():
     return len(glist_events)
@@ -61,10 +56,10 @@ def Count():
 def EventAtIndex(index):
     return glist_events[index]
 
-def SetFastingSchema(fs):
-    GCDS.setValue(42, fs)
+def SetFastingSchema(schema):
+    GCDS.setValue(42, schema)
     get_list()
-    SetOldStyleFasting(fs)
+    SetOldStyleFasting(schema)
 
 def unittests():
     GCUT.info('custom events')

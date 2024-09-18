@@ -6,7 +6,7 @@ from . import GCUT as GCUT
 gss_default = [
     [0, 0, "ARTI", "Tithi at arunodaya"],#0
     [1, 1, "ARTM", "Arunodaya Time"],#1
-    [0, 0, "SRTM", "Sunrise Time"],#2
+    [1, 1, "SRTM", "Sunrise Time"],#2
     [0, 0, "SSTM", "Sunset Time"],#3
     [1, 1, "MRTM", "Moonrise Time"],#4
     [1, 1, "MSTM", "Moonset Time"],#5
@@ -47,7 +47,7 @@ gss_default = [
     [1, 1, "DPAK", "Paksa Info"],#39 paksa info
     [0, 0, "FDIW", "First Day in Week"],#40 first day in week
     [0, 0, "DRAS", "Rasi"], #41 moon rasi for each calendar day
-    [0, 0, "OSFA", "Old Style Fasting text"], #42 old style fasting text
+    [1, 1, "OSFA", "Old Style Fasting text"], #42 old style fasting text
     [0, 0, "MLNT", "Name of month - type"], #43 month type name 0-vaisnava,1-bengal,2-hindu,3-vedic
     # END GCAL 1.4.3
     [0, 0, "EDBL", "Editable Default Events"], #44 editable default events
