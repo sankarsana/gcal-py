@@ -19,4 +19,4 @@ jobs:
             - name: Test calendar Lipetsk year
               run: |
                 pip install pytest pytest-cov
-                pytest calendar_lipetsk_year.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+                pytest tests/calendar_lipetsk_year.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
