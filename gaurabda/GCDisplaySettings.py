@@ -1,13 +1,15 @@
 import json
+import os
+
 from . import GCUT as GCUT
 
 gss_default = [
     [0, 0, "ARTI", "Tithi at arunodaya"],#0
-    [0, 0, "ARTM", "Arunodaya Time"],#1
+    [1, 1, "ARTM", "Arunodaya Time"],#1
     [0, 0, "SRTM", "Sunrise Time"],#2
     [0, 0, "SSTM", "Sunset Time"],#3
-    [0, 0, "MRTM", "Moonrise Time"],#4
-    [0, 0, "MSTM", "Moonset Time"],#5
+    [1, 1, "MRTM", "Moonrise Time"],#4
+    [1, 1, "MSTM", "Moonset Time"],#5
     [1, 1, "FEST", "Festivals"],#6
     [0, 0, "KSAY", "Info about ksaya tithi"],#7
     [0, 0, "VRDH", "Info about vriddhi tithi"],#8
@@ -35,7 +37,7 @@ gss_default = [
     [1, 1, "TSSR", "Today Sunrise"],  #29 Today sunrise
     [1, 1, "TSSN", "Today Noon"],  #30 today noon
     [1, 1, "TSSS", "Today Sunset"],  #31 today sunset
-    [0, 0, "TSAN", "Sandhya Times"],  #32 today + sandhya times
+    [1, 1, "TSAN", "Sandhya Times"],  #32 today + sandhya times
     [1, 1, "TSIN", "Sunrise Info"],  #33 today sunrise info
     [0, 0, "ASIN", "Noon Time"],  #34 astro - noon time
     [1, 1, "NDST", "Notice about DST"], #35 notice about the change of the DST
