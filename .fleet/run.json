@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "python",
+            "name": "Application",
+            "file": "app/run.py",
+            "arguments": [],
+        },
+    ]
+}

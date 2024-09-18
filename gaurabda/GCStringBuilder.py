@@ -1,4 +1,6 @@
 import io
+import os
+
 from . import GCUT as GCUT
 from . import GCStrings as GCStrings
 from . import GCDisplaySettings as GCDisplaySettings
