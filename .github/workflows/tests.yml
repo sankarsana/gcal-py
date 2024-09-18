@@ -21,4 +21,4 @@ jobs:
             - name: Test calendar Lipetsk year
               run: |
                 pip install pytest pytest-cov
-                pytest tests/calendar_lipetsk_year.py
+                python -m pytest tests/calendar_lipetsk_year.py

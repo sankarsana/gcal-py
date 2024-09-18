@@ -10,7 +10,6 @@
             "type": "python-tests",
             "name": "Tests",
             "testFramework": "pytest",
-            "targets": ["tests/calendar_lipetsk_year",]
         }
     ]
 }
