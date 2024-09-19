@@ -1,9 +1,13 @@
 import os
 
 import gaurabda as gcal
+from gaurabda.TToday import unittests
 
 
 def run():
+    # unittests()
+    # return
+
     location = gcal.GCLocation(data={
         'latitude': 52.6088,
         'longitude': 39.5992,

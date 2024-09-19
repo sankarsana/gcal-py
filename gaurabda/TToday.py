@@ -104,12 +104,13 @@ class TToday:
             sb.AppendLine()
             stream.write("Brahma Muhurta {} - {} ({})".format(tda.short(-96), tda.short(-48), GCStrings.GetDSTSignature(p.hasDST)))
 
+        # Calculate sandhyas
         if GCDisplaySettings.getValue(29):
             sb.AppendLine()
             tda = p.astrodata.sun.rise
             stream.write("{} {} ".format(GCStrings.getString(51), tda.short() ))
             if (GCDisplaySettings.getValue(32)):
-                stream.write(" sandhya {} - {} ", tda.short(-24), tda.short(24))
+                stream.write(" sandhya {} - {} ".format(tda.short(-24), tda.short(24)))
             stream.write(" ({})".format(GCStrings.GetDSTSignature(p.hasDST)))
             sb.AppendLine()
 
@@ -119,7 +120,7 @@ class TToday:
             tda = p.astrodata.sun.noon
             stream.write("{} {} ".format(GCStrings.getString(857), tda.short() ))
             if (GCDisplaySettings.getValue(32)):
-                stream.write(" sandhya {} - {} ", tda.short(-24), tda.short(24))
+                stream.write(" sandhya {} - {} ".format(tda.short(-24), tda.short(24)))
             stream.write(" ({})".format(GCStrings.GetDSTSignature(p.hasDST)))
             sb.AppendLine()
 
@@ -128,7 +129,7 @@ class TToday:
             tda = p.astrodata.sun.set
             stream.write("{} {} ".format(GCStrings.getString(52), tda.short() ))
             if (GCDisplaySettings.getValue(32)):
-                stream.write(" sandhya {} - {} ", tda.short(-24), tda.short(24))
+                stream.write(" sandhya {} - {} ".format(tda.short(-24), tda.short(24)))
             stream.write(" ({})".format(GCStrings.GetDSTSignature(p.hasDST)))
             sb.AppendLine()
 
@@ -164,10 +165,10 @@ class TToday:
 def unittests():
     GCUT.info('today results')
     loc = GCLocation(data={
-        'latitude': 48.150002,
-        'longitude': 17.116667,
-        'tzid': 321,
-        'name': 'Bratislava, Slovakia'
+        'latitude': 52.6088,
+        'longitude': 39.5992,
+        'tzname': '+3:00 Europe/Moscow',
+        'name': 'Lipetsk',
     })
     earth = loc.GetEarthData()
     today = Today()
@@ -180,7 +181,7 @@ def unittests():
 
     with open('test/today.txt','wt') as wf:
         tc.formatPlain(wf)
-    with open('test/today.rtf','wt') as wf:
-        tc.formatRtf(wf)
-    with open('test/today.html','wt') as wf:
-        tc.writeHtml(wf)
+    # with open('test/today.rtf','wt') as wf:
+    #     tc.formatRtf(wf)
+    # with open('test/today.html','wt') as wf:
+    #     tc.writeHtml(wf)
