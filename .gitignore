@@ -3,4 +3,4 @@
 app/output/
 */__pycache__
 
-test/today.txt
+test/
