@@ -210,7 +210,21 @@ class GCDayData:
 
         return masa
 
-
+    def masa_name(self):
+        match self.nMasa:
+            case 0: return "0  MADHUSUDANA"
+            case 1: return "1  TRIVIKRAMA"
+            case 2: return "2  VAMANA"
+            case 3: return "3  SRIDHARA"
+            case 4: return "4  HRSIKESA"
+            case 5: return "5  PADMANABHA"
+            case 6: return "6  DAMODARA"
+            case 7: return "7  KESAVA"
+            case 8: return "8  NARAYANA"
+            case 9: return "9  MADHAVA"
+            case 10: return "10 GOVINDA"
+            case 11: return "11 VISNU"
+            case 12: return "12 ADHIKA"
 
 def GetFirstDayOfYear(earth, nYear):
 

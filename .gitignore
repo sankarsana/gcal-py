@@ -4,3 +4,4 @@ app/output/
 */__pycache__
 
 test/
+/.idea/*

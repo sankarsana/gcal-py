@@ -17,7 +17,8 @@ def run():
     date = gcal.GCGregorianDate(year=2024, month=9, day=1)
 
     calendar = gcal.TCalendar()
-    calendar.CalculateCalendar(location, date, 90)
+    calendar.CalculateCalendar(location, date, 365)
+    data = calendar.m_data
 
     print_calendar(calendar, 'txt')
 

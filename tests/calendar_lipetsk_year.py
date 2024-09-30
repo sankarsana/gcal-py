@@ -13,7 +13,7 @@ def test_calenar_lipetsk_year():
         'name': 'Lipetsk',
     })
     date = gaurabda.GCGregorianDate(year=2024, month=9, day=1)
-    with open('tests/calendar_lipetsk_year.json', 'r') as f:
+    with open('calendar_lipetsk_year.json', 'r') as f:
         expected = json.load(f)
 
     calendar = gaurabda.TCalendar()

@@ -244,6 +244,7 @@ class TCalendar:
         for i in range(3,self.m_PureCount + BEFORE_DAYS + 3):
             self.EkadasiCalc(i, earth)
 
+
         # init of festivals
         for i in range(BEFORE_DAYS,self.m_PureCount + BEFORE_DAYS + 3):
             self.CompleteCalc(i, earth)
@@ -267,6 +268,9 @@ class TCalendar:
                 self.m_data[i].astrodata.sun.arunodaya.hour += self.m_data[i].hasDST
 
             self.ResolveFestivalsFasting(i)
+
+        return
+
 
         # init for sankranti
         date.Set(self.m_data[0].date)
@@ -526,7 +530,8 @@ class TCalendar:
                     t.AddSpecFestival(SPEC_JANMASTAMI, CAL_FEST_0)
                     u.AddSpecFestival(SPEC_NANDAUTSAVA, CAL_FEST_1)
                     u.AddSpecFestival(SPEC_PRABHAPP, CAL_FEST_2)
-                else: # tithi is vriddhi and we have to test both days
+                else:
+                    # tithi is vriddhi and we have to test both days
                     # test when both days have ROHINI
                     if ((t.astrodata.nNaksatra == ROHINI_NAKSATRA) and (u.astrodata.nNaksatra == ROHINI_NAKSATRA)):
                         mid_nak_t = GCNaksatra.CalculateMidnightNaksatra(t.date, earth)
@@ -563,7 +568,7 @@ class TCalendar:
                                 t.AddSpecFestival(SPEC_JANMASTAMI, CAL_FEST_0)
                                 u.AddSpecFestival(SPEC_NANDAUTSAVA, CAL_FEST_1)
                                 u.AddSpecFestival(SPEC_PRABHAPP, CAL_FEST_2)
-                    elif (t.astrodata.nNaksatra == ROHINI_NAKSATRA):
+                    elif (t.astrodata.nNaksatra == ROHINI_NAKSATRA): ###########
                         # today is Sri Krsna Janmasthami
                         t.AddSpecFestival(SPEC_JANMASTAMI, CAL_FEST_0)
                         u.AddSpecFestival(SPEC_NANDAUTSAVA, CAL_FEST_1)
