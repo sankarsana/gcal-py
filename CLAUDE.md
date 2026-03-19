@@ -6,6 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `gaurabda` — Python-библиотека для расчёта календаря Гаурабда (Гаудия-Вайшнавский лунный календарь). Выполняет астрономические расчёты (тити, накшатры, йоги, санкранти) и накладывает религиозные события/посты по традиции ИСККОН.
 
+## Tests
+
+План покрытия тестами и текущий прогресс: [`TESTS_PLAN.md`](TESTS_PLAN.md)
+
+Существующие тесты:
+- `tests/calendar_lipetsk_year.py` — интеграционный тест (365 дней, Липецк, golden reference JSON)
+- `tests/test_masa.py` — минимальный unit-тест масы
+
 ## Commands
 
 ```bash
