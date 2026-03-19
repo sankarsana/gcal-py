@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run calendar (Lipetsk)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/run.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run server",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/server/server.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["tests/calendar_lipetsk_year.py", "-v"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

@@ -20,7 +20,7 @@ def run():
     calendar.CalculateCalendar(location, date, 365)
     data = calendar.m_data
 
-    print_calendar(calendar, 'txt')
+    print_calendar(calendar, 'json')
 
 
 def print_calendar(calendar, extension='txt'):

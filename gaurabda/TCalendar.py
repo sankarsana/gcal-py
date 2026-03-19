@@ -269,8 +269,6 @@ class TCalendar:
 
             self.ResolveFestivalsFasting(i)
 
-        return
-
 
         # init for sankranti
         date.Set(self.m_data[0].date)
