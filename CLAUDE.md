@@ -8,17 +8,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Tests
 
-План покрытия тестами и текущий прогресс: [`TESTS_PLAN.md`](TESTS_PLAN.md)
-
-Существующие тесты:
-- `tests/calendar_lipetsk_year.py` — интеграционный тест (365 дней, Липецк, golden reference JSON)
-- `tests/test_masa.py` — минимальный unit-тест масы
+| Файл | Что тестирует |
+|------|---------------|
+| `tests/calendar_lipetsk_year.py` | Интеграционный: 365 дней, Липецк, golden reference JSON (2024/2025/2026) |
+| `tests/test_masa.py` | Unit: `GCDayData.MasaCalc` напрямую |
+| `tests/test_adhika_masa.py` | Unit + интеграция адхика-масы (~раз в 2.5 года) |
+| `tests/test_fasting_schema.py` | `SetFastingSchema()` — глобальное состояние, изоляция между тестами |
+| `tests/test_polar.py` | Полярные локации без восхода/захода (Мурманск, декабрь) |
 
 ## Commands
 
 ```bash
-# Тесты
-python -m pytest tests/calendar_lipetsk_year.py
+# Все тесты
+python -m pytest tests/
+
+# Один файл
+python -m pytest tests/test_masa.py
+
+# Один тест по имени
+python -m pytest tests/test_adhika_masa.py::test_adhika_masa_detected
 
 # Запуск примера (генерирует календарь для Липецка)
 python app/run.py
@@ -41,6 +49,26 @@ python server/server.py
 5. `TCoreEvents` + `GCEventList` — наложение религиозных событий и правил поста
 6. `GCCalendarDay` — итоговый объект одного дня
 
+### Unit-тестирование на низком уровне
+
+Для прямого тестирования астро-расчётов без `TCalendar`:
+
+```python
+from gaurabda import GCGregorianDate, EARTHDATA
+from gaurabda.GCDayData import GCDayData
+
+earth = EARTHDATA()
+earth.latitude_deg = 52.6088
+earth.longitude_deg = 39.5992
+earth.tzone = 3.0
+earth.dst = 297  # tzid из locations.json
+
+date = GCGregorianDate(text='22 Jun 2024')
+astrodata = GCDayData()
+astrodata.DayCalc(date, earth)   # солнце, луна, тити, накшатра, йога
+astrodata.MasaCalc(date, earth)  # маса (вызывать после DayCalc)
+```
+
 ### Key data
 - `gaurabda/res/locations.json` — база ~1000+ городов мира
 - `gaurabda/res/events.json` + `eventfast.json` — определения праздников и постов
@@ -50,5 +78,7 @@ python server/server.py
 ### Output formats
 `TCalendar.write()` поддерживает: plain text, HTML, RTF, XML, JSON.
 
-### Important detail
-Библиотека чистый Python без внешних зависимостей (Python ≥ 3.4). Flask нужен только для сервера.
+### Important details
+- Библиотека — чистый Python без внешних зависимостей (Python ≥ 3.4). Flask нужен только для сервера.
+- `SetFastingSchema()` меняет **глобальное состояние** (`GCDisplaySettings`). В тестах сбрасывать через `pytest.fixture(autouse=True)`.
+- Вывод результатов: `TCalendar.CalculateCalendar(...)` затем `calendar.__dict__()` → JSON-совместимый словарь.
