@@ -5,15 +5,15 @@ import pytest
 import gaurabda
 
 
-def test_calenar_lipetsk_year():
+def _run_calendar_test(year, month, day, json_path):
     location = gaurabda.GCLocation(data={
         'latitude': 52.6088,
         'longitude': 39.5992,
         'tzname': '+3:00 Europe/Moscow',
         'name': 'Lipetsk',
     })
-    date = gaurabda.GCGregorianDate(year=2024, month=9, day=1)
-    with open('tests/calendar_lipetsk_year.json', 'r') as f:
+    date = gaurabda.GCGregorianDate(year=year, month=month, day=day)
+    with open(json_path, 'r') as f:
         expected = json.load(f)
 
     calendar = gaurabda.TCalendar()
@@ -61,6 +61,19 @@ def test_calenar_lipetsk_year():
         assert len(events) == len(events_expected)
         for n, event in enumerate(events):
             event_expected = events_expected[n]
-            assert event['disp'] == event_expected['disp']
-            assert event['prio'] == event_expected['prio']
-            assert event['text'] == event_expected['text']
+            ctx = f"day={i} event={n} text={event.get('text')!r}"
+            assert event['disp'] == event_expected['disp'], ctx
+            assert event['prio'] == event_expected['prio'], ctx
+            assert event['text'] == event_expected['text'], ctx
+
+
+def test_calendar_lipetsk_year_2024():
+    _run_calendar_test(2024, 9, 1, 'tests/calendar_lipetsk_year_2024.json')
+
+
+def test_calendar_lipetsk_year_2025():
+    _run_calendar_test(2025, 9, 1, 'tests/calendar_lipetsk_year_2025.json')
+
+
+def test_calendar_lipetsk_year_2026():
+    _run_calendar_test(2026, 9, 1, 'tests/calendar_lipetsk_year_2026.json')
