@@ -13,6 +13,7 @@ def test_masa():
     date = GCGregorianDate(text='22 Jun 2024')
     astrodata = GCDayData()
 
+    astrodata.DayCalc(date, earth)
     astrodata.MasaCalc(date, earth)
 
     assert astrodata.nMasa == 1
