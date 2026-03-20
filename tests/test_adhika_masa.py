@@ -18,6 +18,7 @@ def test_adhika_masa_detected():
 
     date = GCGregorianDate(text='1 Aug 2023')
     astrodata = GCDayData()
+    astrodata.DayCalc(date, earth)
     astrodata.MasaCalc(date, earth)
 
     assert astrodata.nMasa == 12
