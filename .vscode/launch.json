@@ -18,7 +18,16 @@
             "cwd": "${workspaceFolder}"
         },
         {
-            "name": "Run tests",
+            "name": "Run unit tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["tests/", "--ignore=tests/calendar_lipetsk_year.py", "-v"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run full integration tests",
             "type": "debugpy",
             "request": "launch",
             "module": "pytest",

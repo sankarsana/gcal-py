@@ -18,7 +18,7 @@ jobs:
                 python -m pip install --upgrade pip
                 pip install setuptools wheel
 
-            - name: Test calendar Lipetsk year
+            - name: Run all tests
               run: |
                 pip install pytest pytest-cov
-                python -m pytest tests/calendar_lipetsk_year.py
+                python -m pytest tests/
