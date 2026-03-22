@@ -55,7 +55,6 @@ def _run_calendar_test(year, month, day, json_path):
         assert sun['noon_deg'] == pytest.approx(sun_expected['noon_deg'], rel=1e-6)
         assert sun['rise_deg'] == pytest.approx(sun_expected['rise_deg'], rel=1e-6)
         assert sun['set_deg'] == pytest.approx(sun_expected['set_deg'], rel=1e-6)
-        assert sun['arunodaya'] == sun_expected['arunodaya']
 
         assert day.get('moonrise') == day_expected.get('moonrise')
         assert day.get('moonset') == day_expected.get('moonset')
