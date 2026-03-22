@@ -5,3 +5,4 @@ app/output/
 
 test/
 /.idea/*
+*.egg-info/
