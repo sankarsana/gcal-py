@@ -173,6 +173,8 @@ class SUNDATA:
         yield 'rise', repr(self.rise),
         yield 'noon', repr(self.noon),
         yield 'set', repr(self.set)
+        if self.arunodaya.hour >= 0:
+            yield 'arunodaya', "{:02d}:{:02d}".format(self.arunodaya.hour, self.arunodaya.min)
 
     def __repr__(self):
         d = {

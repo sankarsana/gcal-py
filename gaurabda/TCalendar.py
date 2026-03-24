@@ -194,8 +194,8 @@ class TCalendar:
             if (GCDisplaySettings.getValue(CAL_ARUN_TITHI)):
                 mp.AddEvent(PRIO_ARUN, CAL_ARUN_TITHI, "{}: {}".format(GCStrings.getString(98), GCStrings.GetTithiName(mp.astrodata.nTithiArunodaya)))
 
-            if (GCDisplaySettings.getValue(CAL_ARUN_TIME)):
-                mp.AddEvent(PRIO_ARUN, CAL_ARUN_TIME, "{} {}:{:02d} ({})".format(GCStrings.getString(99), mp.astrodata.sun.arunodaya.hour , mp.astrodata.sun.arunodaya.min, GCStrings.GetDSTSignature(mp.hasDST)))
+            # if (GCDisplaySettings.getValue(CAL_ARUN_TIME)):
+            #     mp.AddEvent(PRIO_ARUN, CAL_ARUN_TIME, "{} {}:{:02d} ({})".format(GCStrings.getString(99), mp.astrodata.sun.arunodaya.hour , mp.astrodata.sun.arunodaya.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
             if (GCDisplaySettings.getValue(CAL_SUN_RISE)):
                 mp.AddEvent(PRIO_SUN, CAL_SUN_RISE, "{} {}:{:02d} ({})".format(GCStrings.getString(51), mp.astrodata.sun.rise.hour , mp.astrodata.sun.rise.min, GCStrings.GetDSTSignature(mp.hasDST)))
