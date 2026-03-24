@@ -66,6 +66,10 @@ class GCCalendarDay:
                 'rasi': self.sankranti_zodiac,
                 'datetime': dict(self.sankranti_day)
             }
+        if self.moonrise.hour >= 0:
+            yield 'moonrise', "{:02d}:{:02d}".format(self.moonrise.hour, self.moonrise.min)
+        if self.moonset.hour >= 0:
+            yield 'moonset', "{:02d}:{:02d}".format(self.moonset.hour, self.moonset.min)
 
     def GetTextLineCount(self):
         nCount = 1

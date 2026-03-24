@@ -162,12 +162,12 @@ class TCalendar:
             for mp in self.m_data:
                 mp.moonrise, mp.moonset = CalcMoonTimes(earth, mp.date, mp.hasDST)
 
-                if GCDisplaySettings.getValue(CAL_MOON_RISE) and mp.moonrise.hour >= 0:
-                    mp.AddEvent(PRIO_MOON, CAL_MOON_RISE, "{} {}:{:02d} ({})".format(GCStrings.getString(53), mp.moonrise.hour , mp.moonrise.min, GCStrings.GetDSTSignature(mp.hasDST)))
+                # if GCDisplaySettings.getValue(CAL_MOON_RISE) and mp.moonrise.hour >= 0:
+                #     mp.AddEvent(PRIO_MOON, CAL_MOON_RISE, "{} {}:{:02d} ({})".format(GCStrings.getString(53), mp.moonrise.hour , mp.moonrise.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
-                if GCDisplaySettings.getValue(CAL_MOON_SET) and mp.moonset.hour >= 0:
-                    mp.AddEvent(PRIO_MOON, CAL_MOON_SET, "{} {}:{:02d} ({})".format(GCStrings.getString(54), mp.moonset.hour
-                        , mp.moonset.min, GCStrings.GetDSTSignature(mp.hasDST)))
+                # if GCDisplaySettings.getValue(CAL_MOON_SET) and mp.moonset.hour >= 0:
+                #     mp.AddEvent(PRIO_MOON, CAL_MOON_SET, "{} {}:{:02d} ({})".format(GCStrings.getString(54), mp.moonset.hour
+                #         , mp.moonset.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
         # init of astro data
         for mp in self.m_data:
