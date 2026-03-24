@@ -197,20 +197,20 @@ class TCalendar:
             # if (GCDisplaySettings.getValue(CAL_ARUN_TIME)):
             #     mp.AddEvent(PRIO_ARUN, CAL_ARUN_TIME, "{} {}:{:02d} ({})".format(GCStrings.getString(99), mp.astrodata.sun.arunodaya.hour , mp.astrodata.sun.arunodaya.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
-            if (GCDisplaySettings.getValue(CAL_SUN_RISE)):
-                mp.AddEvent(PRIO_SUN, CAL_SUN_RISE, "{} {}:{:02d} ({})".format(GCStrings.getString(51), mp.astrodata.sun.rise.hour , mp.astrodata.sun.rise.min, GCStrings.GetDSTSignature(mp.hasDST)))
+            # if (GCDisplaySettings.getValue(CAL_SUN_RISE)):
+            #     mp.AddEvent(PRIO_SUN, CAL_SUN_RISE, "{} {}:{:02d} ({})".format(GCStrings.getString(51), mp.astrodata.sun.rise.hour , mp.astrodata.sun.rise.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
-            if (GCDisplaySettings.getValue(CAL_SUN_NOON)):
-                mp.AddEvent(PRIO_SUN, CAL_SUN_NOON, "{} {}:{:02d} ({})".format(GCStrings.getString(857), mp.astrodata.sun.noon.hour , mp.astrodata.sun.noon.min, GCStrings.GetDSTSignature(mp.hasDST)))
+            # if (GCDisplaySettings.getValue(CAL_SUN_NOON)):
+            #     mp.AddEvent(PRIO_SUN, CAL_SUN_NOON, "{} {}:{:02d} ({})".format(GCStrings.getString(857), mp.astrodata.sun.noon.hour , mp.astrodata.sun.noon.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
-            if (GCDisplaySettings.getValue(CAL_SUN_SET)):
-                mp.AddEvent(PRIO_SUN, CAL_SUN_SET, "{} {}:{:02d} ({})".format(GCStrings.getString(52), mp.astrodata.sun.set.hour , mp.astrodata.sun.set.min, GCStrings.GetDSTSignature(mp.hasDST)))
+            # if (GCDisplaySettings.getValue(CAL_SUN_SET)):
+            #     mp.AddEvent(PRIO_SUN, CAL_SUN_SET, "{} {}:{:02d} ({})".format(GCStrings.getString(52), mp.astrodata.sun.set.hour , mp.astrodata.sun.set.min, GCStrings.GetDSTSignature(mp.hasDST)))
 
-            if (GCDisplaySettings.getValue(CAL_SUN_LONG)):
-                mp.AddEvent(PRIO_ASTRO, CAL_SUN_LONG, "{}: {} (*)".format(GCStrings.getString(100), mp.astrodata.sun.longitude_deg))
+            # if (GCDisplaySettings.getValue(CAL_SUN_LONG)):
+            #     mp.AddEvent(PRIO_ASTRO, CAL_SUN_LONG, "{}: {} (*)".format(GCStrings.getString(100), mp.astrodata.sun.longitude_deg))
 
-            if (GCDisplaySettings.getValue(CAL_MOON_LONG)):
-                mp.AddEvent(PRIO_ASTRO, CAL_MOON_LONG, "{}: {} (*)".format(GCStrings.getString(101), mp.astrodata.moon.longitude_deg))
+            # if (GCDisplaySettings.getValue(CAL_MOON_LONG)):
+            #     mp.AddEvent(PRIO_ASTRO, CAL_MOON_LONG, "{}: {} (*)".format(GCStrings.getString(101), mp.astrodata.moon.longitude_deg))
 
             if (GCDisplaySettings.getValue(CAL_AYANAMSHA)):
                 mp.AddEvent(PRIO_ASTRO, CAL_AYANAMSHA, "{} {} ({}) (*)".format(GCStrings.getString(102), mp.astrodata.msAyanamsa, GCAyanamsha.GetAyanamsaName(GCAyanamsha.GetAyanamsaType())))
