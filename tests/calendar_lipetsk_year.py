@@ -60,8 +60,8 @@ def _run_calendar_test(year, month, day, json_path):
         assert day.get('moonset') == day_expected.get('moonset')
         assert day.get('ekadashiParana') == day_expected.get('ekadashiParana')
 
-        events = day['events']
-        events_expected = day_expected['events']
+        events = day.get('events', [])
+        events_expected = day_expected.get('events', [])
         assert len(events) == len(events_expected)
         for n, event in enumerate(events):
             event_expected = events_expected[n]
@@ -72,12 +72,12 @@ def _run_calendar_test(year, month, day, json_path):
 
 
 def test_calendar_lipetsk_year_2024():
-    _run_calendar_test(2024, 9, 1, 'tests/calendar_lipetsk_year_2024.json')
+    _run_calendar_test(2024, 1, 1, 'tests/calendar_lipetsk_year_2024.json')
 
 
 def test_calendar_lipetsk_year_2025():
-    _run_calendar_test(2025, 9, 1, 'tests/calendar_lipetsk_year_2025.json')
+    _run_calendar_test(2025, 1, 1, 'tests/calendar_lipetsk_year_2025.json')
 
 
 def test_calendar_lipetsk_year_2026():
-    _run_calendar_test(2026, 9, 1, 'tests/calendar_lipetsk_year_2026.json')
+    _run_calendar_test(2026, 1, 1, 'tests/calendar_lipetsk_year_2026.json')

@@ -14,7 +14,7 @@ def run():
         'tzname': '+3:00 Europe/Moscow',
         'name': 'Lipetsk',
     })
-    date = gcal.GCGregorianDate(year=2024, month=9, day=1)
+    date = gcal.GCGregorianDate(year=2024, month=1, day=1)
 
     calendar = gcal.TCalendar()
     calendar.CalculateCalendar(location, date, 365)
